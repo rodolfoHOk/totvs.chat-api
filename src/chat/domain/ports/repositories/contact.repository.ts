@@ -1,4 +1,4 @@
-import { Contact } from '../model/contact.model';
+import { Contact } from '../../model/contact.model';
 
 export interface ContactRepository {
   create(contact: Contact): Contact;
