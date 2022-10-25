@@ -20,6 +20,9 @@ export class MessageController {
       messageCmd.destinationId,
     );
 
+    this.logger.debug('message create');
+    this.logger.debug(JSON.stringify(message));
+
     return message;
   }
 

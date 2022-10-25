@@ -8,6 +8,7 @@ import { ContactRepository } from './domain/ports/repositories/contact.repositor
 import { MessageRepository } from './domain/ports/repositories/message.repository';
 import { ContactService } from './domain/ports/services/contact.service';
 import { MessageService } from './domain/ports/services/message.service';
+import { SocketService } from './domain/ports/services/socket.service';
 
 @Module({
   controllers: [ContactController, MessageController],
@@ -16,6 +17,7 @@ import { MessageService } from './domain/ports/services/message.service';
     { provide: ContactRepository, useClass: ContactInMemoryRepository },
     MessageService,
     { provide: MessageRepository, useClass: MessageInMemoryRepository },
+    SocketService,
   ],
 })
 export class ChatModule {}
