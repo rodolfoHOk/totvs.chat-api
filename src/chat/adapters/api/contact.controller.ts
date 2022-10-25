@@ -1,6 +1,7 @@
-import { Body, Controller, Logger, Post } from '@nestjs/common';
+import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
 import { Contact } from 'src/chat/domain/model/contact.model';
 import { ContactService } from 'src/chat/domain/ports/services/contact.service';
+import { FindByUserDto } from './commands/contact.command';
 
 @Controller({
   path: 'contacts',
@@ -18,5 +19,15 @@ export class ContactController {
     this.logger.debug('contact create');
     this.logger.debug(JSON.stringify(contact));
     return contact;
+  }
+
+  @Get()
+  findAll(): Contact[] {
+    return this.contactService.findAll();
+  }
+
+  @Get(':userLoginId')
+  findByUser(@Param() params: FindByUserDto): Contact[] {
+    return this.contactService.findByUser(params.userLoginId);
   }
 }
