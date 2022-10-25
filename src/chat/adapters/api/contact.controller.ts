@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
 import { Contact } from 'src/chat/domain/model/contact.model';
 import { ContactService } from 'src/chat/domain/ports/services/contact.service';
-import { FindByUserDto } from './commands/contact.command';
+import { ContactDto, FindByUserDto } from './commands/contact.command';
 
 @Controller({
   path: 'contacts',
@@ -13,7 +13,7 @@ export class ContactController {
   constructor(private contactService: ContactService) {}
 
   @Post()
-  create(@Body() contactCmd: Contact): Contact {
+  create(@Body() contactCmd: ContactDto): Contact {
     const { name } = contactCmd;
     const contact = this.contactService.create(name);
     this.logger.debug('contact create');
