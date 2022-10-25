@@ -1,0 +1,11 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    restart: always
+    ports:
+      - 3333:3333
+    environment:
+      PORT: 3333
