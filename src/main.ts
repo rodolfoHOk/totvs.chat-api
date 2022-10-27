@@ -13,6 +13,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, documentConfig);
   SwaggerModule.setup('swagger-ui', app, document);
 
+  app.enableCors();
   await app.listen(3333);
 }
 bootstrap();
