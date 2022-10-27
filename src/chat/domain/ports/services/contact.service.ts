@@ -23,8 +23,9 @@ export class ContactService {
 
   findByUser(userLoginId: string): Contact[] {
     const contacts = this.contactRepository.findAll();
-    return contacts.filter((contact) =>
-      this.messageRepository.findByUsers(userLoginId, contact.id),
+    return contacts.filter(
+      (contact) =>
+        this.messageRepository.findByUsers(userLoginId, contact.id).length,
     );
   }
 }
