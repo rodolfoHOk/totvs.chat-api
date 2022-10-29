@@ -18,8 +18,8 @@ export class ContactController {
   @ApiOperation({ summary: 'Create contact' })
   @ApiResponse({ status: 201, description: 'Created', type: Contact })
   create(@Body() contactCmd: ContactDto): Contact {
-    const { name } = contactCmd;
-    const contact = this.contactService.create(name);
+    const { name, avatarUrl } = contactCmd;
+    const contact = this.contactService.create(name, avatarUrl);
     this.logger.debug('contact create');
     this.logger.debug(JSON.stringify(contact));
     return contact;

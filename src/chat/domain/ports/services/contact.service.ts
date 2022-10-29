@@ -12,8 +12,8 @@ export class ContactService {
     private readonly messageRepository: MessageRepository,
   ) {}
 
-  create(name: string): Contact {
-    const contact = new Contact(name);
+  create(name: string, avatarUrl: string): Contact {
+    const contact = new Contact(name, avatarUrl);
     return this.contactRepository.create(contact);
   }
 

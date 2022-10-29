@@ -8,4 +8,6 @@ export class FindByUserDto {
 export class ContactDto {
   @ApiProperty()
   name: string;
+  @ApiProperty()
+  avatarUrl: string;
 }

@@ -7,13 +7,16 @@ export class Contact {
   @ApiProperty()
   name: string;
   @ApiProperty()
+  avatarUrl: string;
+  @ApiProperty()
   createdAt: Date;
   @ApiProperty()
   updatedAt: Date;
 
-  constructor(name: string) {
+  constructor(name: string, avatarUrl: string) {
     this.id = uuidV4();
     this.name = name;
+    this.avatarUrl = avatarUrl;
     this.createdAt = new Date();
     this.updatedAt = new Date();
   }
