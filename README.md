@@ -11,6 +11,16 @@
 - OpenApi
 - Docker
 
+## Imagens do projeto
+
+- <img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/totvs-chat-11.png" alt="Totvs Chat Imagem 10" width="450"/>
+
+- <img src="https://raw.githubusercontent.com/rodolfoHOk/portfolio-img/main/images/totvs-chat-12.png" alt="Totvs Chat Imagem 11" width="450"/>
+
+## Repositório do Front-End
+
+- https://github.com/rodolfoHOk/totvs.chat-app
+
 ## Docker
 
 ### run API
